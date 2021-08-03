@@ -10,6 +10,8 @@ abstract class ValueObject<T> extends Equatable {
 
   const ValueObject();
 
+  bool isValid() => value.isRight();
+
   @override
   List<Object?> get props => [value];
 
