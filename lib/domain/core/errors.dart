@@ -7,7 +7,7 @@ class UnexpectedValueError extends Error {
 
   @override
   String toString() {
-    final explanation =
+    const explanation =
         'Encountered a ValueFailure at an unrecoverable point. Terminating.';
 
     return Error.safeToString('$explanation Failure was: $valueFailure');
