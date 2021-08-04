@@ -39,5 +39,5 @@ class Password extends ValueObject<String> {
   List<Object?> get props => [value];
 
   @override
-  String toString() => 'EmailAddress($value)';
+  String toString() => 'Password($value)';
 }
