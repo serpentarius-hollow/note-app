@@ -40,4 +40,7 @@ class UniqueId extends ValueObject<String> {
   }
 
   const UniqueId._(this.value);
+
+  @override
+  List<Object?> get props => [value];
 }
