@@ -45,12 +45,17 @@ class SignInForm extends StatelessWidget {
                 onChanged: (value) => context
                     .read<SignInFormBloc>()
                     .add(SignInFormEvent.emailChanged(value)),
-                validator: (_) => state.emailAddress.value.fold(
-                    (l) => l.maybeMap(
-                          invalidEmail: (_) => 'Invalid Email',
-                          orElse: () => null,
-                        ),
-                    (r) => null),
+                validator: (_) => context
+                    .read<SignInFormBloc>()
+                    .state
+                    .emailAddress
+                    .value
+                    .fold(
+                        (l) => l.maybeMap(
+                              invalidEmail: (_) => 'Invalid Email',
+                              orElse: () => null,
+                            ),
+                        (r) => null),
               ),
               const SizedBox(
                 height: 10,
@@ -65,12 +70,13 @@ class SignInForm extends StatelessWidget {
                 onChanged: (value) => context
                     .read<SignInFormBloc>()
                     .add(SignInFormEvent.passwordChanged(value)),
-                validator: (_) => state.password.value.fold(
-                    (l) => l.maybeMap(
-                          shortPassword: (_) => 'Short Password',
-                          orElse: () => null,
-                        ),
-                    (r) => null),
+                validator: (_) =>
+                    context.read<SignInFormBloc>().state.password.value.fold(
+                        (l) => l.maybeMap(
+                              shortPassword: (_) => 'Short Password',
+                              orElse: () => null,
+                            ),
+                        (r) => null),
               ),
               const SizedBox(
                 height: 10,
