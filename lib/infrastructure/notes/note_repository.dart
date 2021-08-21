@@ -29,14 +29,17 @@ class NoteRepository implements INoteRepository {
         .map(
           (snapshot) => right<NoteFailure, KtList<Note>>(
             snapshot.docs
-                .map((doc) => NoteDto.fromFirestore(doc).toDomain())
+                .map(
+                  (doc) => NoteDto.fromFirestore(doc).toDomain(),
+                )
                 .toImmutableList(),
           ),
         )
         .handleError((e) {
-      if (e is PlatformException && e.message!.contains('permission-denied')) {
+      if (e is PlatformException && e.message!.contains('PERMISSION_DENIED')) {
         return left(const NoteFailure.insufficientPermission());
       } else {
+        // log.error(e.toString());
         return left(const NoteFailure.unexpected());
       }
     });

@@ -8,6 +8,7 @@ import '../../../application/notes/note_actor/note_actor_bloc.dart';
 import '../../../application/notes/note_watcher/note_watcher_bloc.dart';
 import '../../../injection.dart';
 import '../../routes/router.gr.dart';
+import 'widgets/notes_overview_body.dart';
 
 class NotesOverviewPage extends StatelessWidget {
   const NotesOverviewPage({Key? key}) : super(key: key);
@@ -71,6 +72,7 @@ class NotesOverviewPage extends StatelessWidget {
               )
             ],
           ),
+          body: const NotesOverviewBody(),
           floatingActionButton: FloatingActionButton(
             onPressed: () {
               // TODO: Navigate to NoteFormPage
