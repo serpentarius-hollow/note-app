@@ -5,6 +5,11 @@ linter:
     sort_pub_dependencies: false
 
 analyzer:
+  exclude:
+    - "*g.dart"
+    - "*.freezed.dart"
+    - "lib/**/*.g.dart"
+    - "lib/**/*.freezed.dart"
   errors:
     missing_required_param: error
     missing_return: error

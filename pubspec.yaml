@@ -23,6 +23,7 @@ environment:
 dependencies:
   another_flushbar: ^1.10.24
   auto_route: ^2.3.0
+  cloud_firestore: ^2.5.0
   cupertino_icons: ^1.0.2
   dartz: ^0.10.0-nullsafety.2
   equatable: ^2.0.3
@@ -35,6 +36,7 @@ dependencies:
   get_it: ^7.2.0
   google_sign_in: ^5.0.5
   injectable: ^1.4.1
+  json_annotation: ^4.0.1
   kt_dart: ^0.9.1
   uuid: ^3.0.4
 
@@ -45,6 +47,7 @@ dev_dependencies:
     sdk: flutter
   freezed: ^0.14.2
   injectable_generator: ^1.4.1
+  json_serializable: ^4.1.4
   lint: ^1.5.3
 
 # For information on the generic Dart part of this file, see the
