@@ -28,6 +28,9 @@ class AppWidget extends StatelessWidget {
               borderRadius: BorderRadius.circular(8),
             ),
           ),
+          floatingActionButtonTheme: FloatingActionButtonThemeData(
+            backgroundColor: Colors.blue[900],
+          ),
         ),
         routerDelegate: AutoRouterDelegate(_appRouter),
         routeInformationParser: _appRouter.defaultRouteParser(),
