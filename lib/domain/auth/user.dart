@@ -1,5 +1,5 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
-import '../core/value_object.dart';
+import '../core/value_objects.dart';
 
 part 'user.freezed.dart';
 
