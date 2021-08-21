@@ -1,4 +1,5 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:dartz/dartz.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:kt_dart/kt.dart';
@@ -40,7 +41,7 @@ class NoteDto with _$NoteDto {
 
   Note toDomain() {
     return Note(
-      id: UniqueId.fromUniqueString(id!),
+      id: UniqueId.fromUniqueString(this.id!),
       body: NoteBody(body),
       color: NoteColor(Color(color)),
       todos: List3(todos.map((dto) => dto.toDomain()).toImmutableList()),
@@ -50,8 +51,9 @@ class NoteDto with _$NoteDto {
   factory NoteDto.fromJson(Map<String, dynamic> json) =>
       _$NoteDtoFromJson(json);
 
-  factory NoteDto.fromFirestore(DocumentSnapshot<Map<String, dynamic>> doc) {
-    return NoteDto.fromJson(doc.data()!).copyWith(id: doc.id);
+  factory NoteDto.fromFirestore(DocumentSnapshot<Object?> doc) {
+    return NoteDto.fromJson(cast<Map<String, dynamic>>(doc.data()))
+        .copyWith(id: doc.id);
   }
 }
 
@@ -89,7 +91,7 @@ class TodoItemDto with _$TodoItemDto {
 
   TodoItem toDomain() {
     return TodoItem(
-      id: UniqueId.fromUniqueString(id),
+      id: UniqueId.fromUniqueString(this.id),
       name: TodoName(name),
       isDone: isDone,
     );
