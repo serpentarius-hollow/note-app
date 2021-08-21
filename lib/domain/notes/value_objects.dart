@@ -69,13 +69,13 @@ class NoteColor extends ValueObject<Color> {
   List<Object?> get props => [value];
 }
 
-class List3<T> extends ValueObject<KtList> {
+class List3<T> extends ValueObject<KtList<T>> {
   @override
-  final Either<ValueFailure<KtList>, KtList> value;
+  final Either<ValueFailure<KtList<T>>, KtList<T>> value;
 
   static const maxLength = 3;
 
-  factory List3(KtList input) {
+  factory List3(KtList<T> input) {
     return List3._(validateMaxListLength(input, maxLength));
   }
 

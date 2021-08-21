@@ -52,8 +52,8 @@ Either<ValueFailure<String>, String> validateSingleLine(String input) {
   }
 }
 
-Either<ValueFailure<KtList>, KtList> validateMaxListLength(
-  KtList input,
+Either<ValueFailure<KtList<T>>, KtList<T>> validateMaxListLength<T>(
+  KtList<T> input,
   int maxLength,
 ) {
   if (input.size <= maxLength) {
