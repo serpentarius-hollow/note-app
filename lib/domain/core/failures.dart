@@ -27,5 +27,6 @@ class ValueFailure<T> with _$ValueFailure<T> {
 
   const factory ValueFailure.listTooLong({
     required T failedValue,
+    required int maxLength,
   }) = ListTooLong<T>;
 }
