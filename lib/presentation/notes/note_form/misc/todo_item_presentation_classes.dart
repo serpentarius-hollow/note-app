@@ -7,7 +7,7 @@ import '../../../../domain/notes/value_objects.dart';
 part 'todo_item_presentation_classes.freezed.dart';
 
 @freezed
-abstract class TodoItemPrimitive with _$TodoItemPrimitive {
+class TodoItemPrimitive with _$TodoItemPrimitive {
   const TodoItemPrimitive._();
 
   const factory TodoItemPrimitive({

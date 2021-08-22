@@ -2,13 +2,13 @@ import 'package:another_flushbar/flushbar_helper.dart';
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:note_app/presentation/notes/notes_overview/widgets/incomplete_switch.dart';
 
 import '../../../application/auth/auth_bloc.dart';
 import '../../../application/notes/note_actor/note_actor_bloc.dart';
 import '../../../application/notes/note_watcher/note_watcher_bloc.dart';
 import '../../../injection.dart';
 import '../../routes/router.gr.dart';
+import 'widgets/incomplete_switch.dart';
 import 'widgets/notes_overview_body.dart';
 
 class NotesOverviewPage extends StatelessWidget {
@@ -44,8 +44,7 @@ class NotesOverviewPage extends StatelessWidget {
                   FlushbarHelper.createError(
                     duration: const Duration(seconds: 5),
                     message: state.noteFailure.map(
-                      unexpected: (_) =>
-                          'Unexpected error occured while deleting, please contact support.',
+                      unexpected: (_) => 'Unexpected error occured.',
                       insufficientPermission: (_) => 'Insufficient permission.',
                       unableToUpdate: (_) => 'Impossible error.',
                     ),
@@ -73,7 +72,7 @@ class NotesOverviewPage extends StatelessWidget {
           body: const NotesOverviewBody(),
           floatingActionButton: FloatingActionButton(
             onPressed: () {
-              // TODO: Navigate to NoteFormPage
+              context.router.push(NoteFormRoute());
             },
             child: const Icon(Icons.add),
           ),
