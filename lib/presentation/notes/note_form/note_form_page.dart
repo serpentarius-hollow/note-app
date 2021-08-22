@@ -9,6 +9,7 @@ import '../../../domain/notes/note.dart';
 import '../../../injection.dart';
 import '../../routes/router.gr.dart';
 import 'widgets/body_field_widget.dart';
+import 'widgets/color_field_widget.dart';
 
 class NoteFormPage extends StatelessWidget {
   final Note? editedNote;
@@ -134,6 +135,7 @@ class NoteFormPageScaffold extends StatelessWidget {
               child: Column(
                 children: const [
                   BodyField(),
+                  ColorField(),
                 ],
               ),
             ),
