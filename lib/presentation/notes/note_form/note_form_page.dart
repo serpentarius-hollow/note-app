@@ -8,6 +8,7 @@ import '../../../application/notes/note_form/note_form_bloc.dart';
 import '../../../domain/notes/note.dart';
 import '../../../injection.dart';
 import '../../routes/router.gr.dart';
+import 'widgets/body_field_widget.dart';
 
 class NoteFormPage extends StatelessWidget {
   final Note? editedNote;
@@ -123,6 +124,21 @@ class NoteFormPageScaffold extends StatelessWidget {
             icon: const Icon(Icons.check),
           ),
         ],
+      ),
+      body: BlocBuilder<NoteFormBloc, NoteFormState>(
+        buildWhen: (previous, current) =>
+            previous.showErrorMessages != current.showErrorMessages,
+        builder: (context, state) {
+          return Form(
+            child: SingleChildScrollView(
+              child: Column(
+                children: const [
+                  BodyField(),
+                ],
+              ),
+            ),
+          );
+        },
       ),
     );
   }
