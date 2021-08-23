@@ -1,16 +1,24 @@
 # note_app
 
-A new Flutter project.
+Note Taking App with Domain Driven Development.
 
-## Getting Started
+## Spec
 
-This project is a starting point for a Flutter application.
+- Auto Route
+- BLoC
+- Dartz
+- Freezed
+- Firebase Auth
+- Firestore
+- GetIt
+- Injectable
+- Json Serializable
+- Lint
+- And many more...
 
-A few resources to get you started if this is your first Flutter project:
+## Screenshots
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
-
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+<img src="https://user-images.githubusercontent.com/58662827/130480616-c5f45529-d69c-4c38-b185-039615912547.png" width="378" height="672">
+<img src="https://user-images.githubusercontent.com/58662827/130481782-97ebff72-e37f-4fbc-91c7-38fd0ed45faa.png" width="378" height="672">
+<img src="https://user-images.githubusercontent.com/58662827/130480857-aae54b28-be9b-42fe-9a16-09b5ae98926d.png" width="378" height="672">
+<img src="https://user-images.githubusercontent.com/58662827/130480871-250730ce-8afe-41c0-9978-fa88f15da107.png" width="378" height="672">
