@@ -4,6 +4,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../application/auth/auth_bloc.dart';
 import '../../injection.dart';
+import '../../theme.dart';
 import '../routes/router.gr.dart';
 
 class AppWidget extends StatelessWidget {
@@ -20,18 +21,7 @@ class AppWidget extends StatelessWidget {
       ],
       child: MaterialApp.router(
         title: 'Note App',
-        theme: ThemeData.light().copyWith(
-          primaryColor: Colors.amber,
-          accentColor: Colors.amberAccent,
-          inputDecorationTheme: InputDecorationTheme(
-            border: OutlineInputBorder(
-              borderRadius: BorderRadius.circular(8),
-            ),
-          ),
-          floatingActionButtonTheme: FloatingActionButtonThemeData(
-            backgroundColor: Colors.blue[900],
-          ),
-        ),
+        theme: myTheme,
         routerDelegate: AutoRouterDelegate(_appRouter),
         routeInformationParser: _appRouter.defaultRouteParser(),
       ),
